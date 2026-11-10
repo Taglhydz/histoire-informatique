@@ -48,3 +48,9 @@ a {
   margin-right: 0.5rem;
   font-weight: bold;
 }
+
+.image {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px #222;
+}

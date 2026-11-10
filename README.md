@@ -4,8 +4,8 @@ Site statique retraçant l'histoire de l'informatique, réalisé en équipe dans
 
 ## Présentation
 
-- **Équipe** : à compléter (noms et comptes GitHub)
-- **Responsable du dépôt** : à compléter
+- **Équipe** : Aurore (@Alysium29), Thomas (@RieuThomas), Tom (@Taglhydz)
+- **Responsable du dépôt** : Tom
 - **Contenu** : une page d'accueil avec une frise chronologique, et une page par membre (une époque, une personnalité, une invention…)
 
 ## Installation
@@ -13,8 +13,8 @@ Site statique retraçant l'histoire de l'informatique, réalisé en équipe dans
 Aucun outil de build n'est nécessaire : le site est en HTML et CSS.
 
 ```shell
-git clone git@github.com:<organisation>/<depot>.git
-cd <depot>
+git clone git@github.com:Taglhydz/histoire-informatique.git
+cd histoire-informatique
 ```
 
 Ouvrez ensuite `index.html` dans votre navigateur.
@@ -33,7 +33,7 @@ Personne ne pousse directement sur `main` ou `develop`.
 
 ### Convention de commit
 
-À compléter par l'équipe (par exemple Conventional Commits : `feat: ajoute la page Turing`).
+Conventional Commits (ex: `feat(page-turing): ajoute la page Turing`)
 
 ### Relecture
 
@@ -43,7 +43,7 @@ Toute modification passe par une **Pull Request** vers `develop`, qui :
 - est relue par au moins un autre membre de l'équipe
 - n'est fusionnée que si la CI est verte
 
-À compléter : qui relit les Pull Requests de qui ?
+Tom et Thomas reliront Aurore, et inversement.
 
 ### Ajouter sa page
 
@@ -55,4 +55,4 @@ Toute modification passe par une **Pull Request** vers `develop`, qui :
 
 ## Déploiement
 
-À compléter : comment le site est déployé en recette et en production, et comment vérifier la version déployée.
+À compléter plus tard : comment le site est déployé en recette et en production, et comment vérifier la version déployée.
