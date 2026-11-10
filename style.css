@@ -1,0 +1,50 @@
+:root {
+  --couleur-texte: #222;
+  --couleur-fond: #fdfdfb;
+  --couleur-accent: #2fb8c5;
+  --largeur-max: 60rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: var(--largeur-max);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+}
+
+header,
+footer {
+  padding: 1rem 0;
+}
+
+h1 {
+  color: var(--couleur-accent);
+}
+
+a {
+  color: var(--couleur-accent);
+}
+
+.frise {
+  list-style: none;
+  padding-left: 0;
+  border-left: 4px solid var(--couleur-accent);
+}
+
+.frise li {
+  margin: 0 0 1.5rem;
+  padding-left: 1rem;
+}
+
+.annee {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}

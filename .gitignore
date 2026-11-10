@@ -1,0 +1,10 @@
+# Dépendances et outils
+node_modules/
+
+# Systèmes et éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
