@@ -33,7 +33,7 @@ Personne ne pousse directement sur `main` ou `develop`.
 
 ### Convention de commit
 
-Conventional Commits (ex: `feat: ajoute la page Turing`)
+Conventional Commits (ex: `feat(page-turing): ajoute la page Turing`)
 
 ### Relecture
 
