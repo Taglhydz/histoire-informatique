@@ -1,4 +1,5 @@
 # Une histoire de l'informatique
+![CI](https://github.com/Taglhydz/histoire-informatique/actions/workflows/ci.yml/badge.svg)
 
 Site statique retraçant l'histoire de l'informatique, réalisé en équipe dans le module « Versionnage et intégration continue ».
 
@@ -54,5 +55,7 @@ Tom et Thomas reliront Aurore, et inversement.
 5. Ouvrez une Pull Request vers `develop`
 
 ## Déploiement
+Production : https://rs5whashup.expose.labinux.com
+Recette : https://j7h6xfdt53.expose.labinux.com
 
-À compléter plus tard : comment le site est déployé en recette et en production, et comment vérifier la version déployée.
+Pour vérifier la version, ajouter "/version.txt" à la fin des adresses. Nous devrions voir le dernier commit de develop pour la recette, et le dernier tag de version pour la production.
