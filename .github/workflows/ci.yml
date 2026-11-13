@@ -1,0 +1,53 @@
+# Le nom du workflow, affiché dans l'onglet Actions
+name: CI
+
+# Quand il se déclenche : à chaque Pull Request vers develop ou main,
+# et à chaque push sur ces branches (donc après chaque merge)
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+# Le workflow ne fait que lire le dépôt
+permissions:
+  contents: read
+
+jobs:
+  html:
+    # Le nom du job : c'est ce nom que GitHub affiche, et qu'on exigera pour merger
+    name: Validation HTML
+    # Une machine Ubuntu neuve, prêtée par GitHub le temps du job
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Récupère le code de la Pull Request
+      - uses: actions/checkout@v4
+      # 2. Installe Node.js 22
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      # 3. Installe les linters, aux versions de package-lock.json
+      - run: npm ci
+      # 4. Lance la vérification : une erreur fait échouer le job
+      - run: npm run lint:html
+
+  css:
+    name: Lint CSS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run lint:css
+
+  # Ajouté à la fin de ci.yml, aligné sous html et css
+  commits:
+    name: Convention de commit
+    # Seulement sur une Pull Request : il lit les commits qu'elle apporte
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: wagoid/commitlint-github-action@v6
+        with: { configFile: commitlint.config.mjs }
