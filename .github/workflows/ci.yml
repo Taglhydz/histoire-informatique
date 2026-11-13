@@ -39,3 +39,15 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npm run lint:css
+
+  # Ajouté à la fin de ci.yml, aligné sous html et css
+  commits:
+    name: Convention de commit
+    # Seulement sur une Pull Request : il lit les commits qu'elle apporte
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: wagoid/commitlint-github-action@v6
+        with: { configFile: commitlint.config.mjs }
